@@ -1,3 +1,26 @@
+
+class cursos{
+  constructor({nombre, classes = []}){
+    this._nombre = nombre;
+    this.classes = classes;
+  }
+  get nombre(){
+    return this._nombre;
+  }
+  set nombre(nuevoNombre){
+    if(nuevoNombre === "mal"){
+      console.error("no sean malvibroso")
+    }else{
+      this._nombre = nuevoNombre;
+    }
+  }
+}
+
+const cursoBasicoHtmlyCss = new cursos({
+  nombre: "CursoBasicoHtmlyCss",
+  classes: ["curso gratuito de programacion basica"],
+})
+
 class LearningPath {
     constructor({
       nombreRuta,
@@ -10,16 +33,16 @@ class LearningPath {
 
 const escuelaWeb = new LearningPath({
     nombreRuta : "escuela web",
-    cursos: ["html", "css", "JS"]
+    cursos: ["html", "css", "JS", cursoBasicoHtmlyCss]
 });
 
 const escuelaData = new LearningPath({
     nombreRuta: "escuela data",
-    cursos: ["SQL", "Python", "Machine Learning"]
+    cursos: ["SQL", "Python", "Machine Learning", cursoBasicoHtmlyCss]
   });
 const escuelaVgs = new LearningPath({
     nombreRuta: "escuela videojuegos",
-    cursos: ["Game Design", "Unity", "Unreal Engine"]
+    cursos: ["Game Design", "Unity", "Unreal Engine", cursoBasicoHtmlyCss]
   });
 
 class Student {
@@ -43,6 +66,9 @@ class Student {
     };
     this.approvedCourses = approvedCourses;
     this.learningPaths = learningPaths;
+  }
+  get verUserName(){
+     return this.username;
   }
 }
 
