@@ -1,4 +1,4 @@
-import { platziClass } from "./main.mjs";
+import { platziClass } from "./main.js";
 
 const clase01 = new platziClass({
 name: "javascript: orientada a objetos",
